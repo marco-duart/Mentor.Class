@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sora&display=swap');
+
+.fontSora {
+    font-family: 'Sora', sans-serif;
+}
+
+.fontPoppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.titleLogin {
+    font-size: 36px;
+    font-weight: bold;
+    color: #212121;
+}
+
+.subtitleLogin {
+    color: #424242;
+    font-size: 20px;
+}
+
+.form {
+    margin-top: 40px;
+}
+
+.formItem {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.form input[type=text],input[type=password] {
+    width: 400px;
+    height: 56px;
+    border: 1px solid #E0E0E0;
+    border-radius: 16px;
+}
+
+/* .optionsLogin {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+} */
+
+.optionsLogin input {
+    width: 24px;
+    height: 24px;
+}
+
+.btnLogin {
+    width: 400px;
+    height: 56px;
+    margin-top: 20px;
+    color: #FFFFFF;
+    background-color: #482D83;
+    border-radius: 16px;
+    cursor: pointer;
+}
