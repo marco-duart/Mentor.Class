@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container d-flex justify-content-center align-items-center">
-        <div class="row">
+        <div class="row positionCard">
             <div class="col">
                 <div class="subtitleLogin fontSora">Seja bem vindo!</div>
                 <div class="titleLogin fontSora">Realize seu Login</div>
@@ -23,11 +23,15 @@
                     <div class="formItem">
                         <label for="">Senha</label>
                         <input type="password">
+                        <!-- <span class="material-symbols-outlined">visibility_off</span>
+                        <span class="material-symbols-outlined">visibility</span> Colocar em position, criar alguma função para transição de senha visivel(se for possível)-->
                     </div>
                     <div class="optionsLogin">
-                        <input type="checkbox" name="" id="">
-                        <label for="">Lembrar-me</label>
-                        <a href="">Esqueci minha senha</a></div>
+                        <span>
+                            <input type="checkbox" name="" id="">
+                            <label for="" aria-placeholder="Insira sua senha">Lembrar-me</label>
+                        </span>
+                        <a href="">Esqueci minha senha</a>
                     </div>
                     <div><button class="btnLogin">Entrar</button></div>
                 </form>

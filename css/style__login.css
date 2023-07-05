@@ -8,6 +8,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.positionCard {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -212px;
+    margin-left: -212px;
+}
+
 .titleLogin {
     font-size: 36px;
     font-weight: bold;
@@ -29,22 +37,37 @@
     margin-top: 20px;
 }
 
-.form input[type=text],input[type=password] {
+.formItem label {
+    color: #757575;
+}
+
+.formItem input {
     width: 400px;
     height: 56px;
     border: 1px solid #E0E0E0;
     border-radius: 16px;
 }
 
-/* .optionsLogin {
-    width: 400px;
+.optionsLogin {
+    margin-top: 20px;
     display: flex;
-    flex-direction: row;
-} */
-
+    justify-content: space-between;
+    align-items: center;
+}
+.optionsLogin a {
+    text-decoration: none;
+    color: #616161;
+}
+.optionsLogin span {
+    display: flex;
+}
 .optionsLogin input {
     width: 24px;
     height: 24px;
+    margin-right: 10px;
+}
+.optionsLogin label {
+    font-weight: bold;
 }
 
 .btnLogin {
@@ -55,4 +78,11 @@
     background-color: #482D83;
     border-radius: 16px;
     cursor: pointer;
+}
+
+
+/* Criar função para transição de cor dos input junto com validação dos mesmos */
+.inputOk {
+    color: #00C247;
+    border: 1px solid #00C247;
 }
