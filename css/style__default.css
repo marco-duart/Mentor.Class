@@ -8,6 +8,35 @@
     box-sizing: border-box;
 }
 
+.logUser {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    margin: 25px;
+}
+
+.logUserIcon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-content: center;
+    background-color: #6950A1;
+    border-radius: 50%;
+}
+
+.logUserInfo div:first-child {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.logUserInfo div:last-child {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #757575;
+}
+
 .sidebar {
     height: 100vh;
     background-color: #482D83;
