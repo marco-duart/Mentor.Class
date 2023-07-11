@@ -38,7 +38,6 @@
 }
 
 .sidebar {
-    height: 100vh;
     background-color: #482D83;
     display: flex;
     flex-direction: column;
