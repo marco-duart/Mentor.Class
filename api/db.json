@@ -44,39 +44,48 @@
   "mentory": [
     {
       "title": "Gerenciamento de estados globais no ReactJS com Typescript",
-      "mentor": "Maria Luiza",
-      "status": "true",
+      "mentor": {
+        "name": "Itachi Uchiha",
+        "id": 7
+      },
+      "status": "Ativo",
       "id": 0
     },
     {
       "title": "Gerenciamento de estados globais no ReactJS com Typescript",
-      "mentor": "Carlos Eduardo",
-      "status": "true",
+      "mentor": {
+        "name": "Ariana Grande",
+        "id": 6
+      },
+      "status": "Ativo",
       "id": 1
     },
     {
       "title": "Gerenciamento de estados globais no ReactJS com Typescript",
-      "mentor": "Júlio Roberto",
-      "status": "true",
+      "mentor": {
+        "name": "Paola Oliveira Silva",
+        "id": 2
+      },
+      "status": "Inativo",
       "id": 2
     },
     {
       "title": "Gerenciamento de estados globais no ReactJS com Typescript",
-      "mentor": "Maria Luiza",
-      "status": "true",
+      "mentor": {
+        "name": "Juliana Amaral",
+        "id": 0
+      },
+      "status": "Inativo",
       "id": 3
     },
     {
       "title": "Gerenciamento de estados globais no ReactJS com Typescript",
-      "mentor": "Carlos Eduardo",
-      "status": "true",
+      "mentor": {
+        "name": "Pedro Souza",
+        "id": 5
+      },
+      "status": "Ativo",
       "id": 4
-    },
-    {
-      "title": "Gerenciamento de estados globais no ReactJS com Typescript",
-      "mentor": "Júlio Roberto",
-      "status": "true",
-      "id": 5
     }
   ]
 }
