@@ -1,14 +1,37 @@
-const formNewMentory = document.getElementById('new-mentory')
-const checkBox = document.getElementById('status')
+const formEditMentory = document.getElementById('edit-mentory')
+let mentoryID = null
 
+/* -----------PUT----------- */
 
-/* -----------POST----------- */
-/* CHAMANDO EVENTO DE ENVIO DO FORMULARIO DE CADASTRO */
-formNewMentory.addEventListener('submit', async element => {
+// RECUPERANDO O ID ATRAVÉS DA URL DA PAGINA REDIRECIONADA
+const getIdUrl = () => {
+    const paramString = window.location.search
+    const pararms = new URLSearchParams(paramString)
+    mentoryID = pararms.get('id')
+}
+
+const searchMentory = async (mentoryID) => {
+    const response = await fetch(`http://localhost:3000/mentory/${mentoryID}`)
+    const mentory = await response.json()
+    return mentory
+} 
+
+/* CHAMANDO EVENTO DE ENVIO DO FORMULARIO DE EDIÇÃO */
+formEditMentory.addEventListener('submit', async element => {
     element.preventDefault()
-    const title = formNewMentory.elements['title'].value
-    const mentor = formNewMentory.elements['mentor'].value
-    const status = formNewMentory.elements['status'].value
+    const title = formEditMentory.elements['title'].value
+    const mentor = formEditMentory.elements['mentor'].value
+    
+    let status
+    let checkbox = document.getElementById('status')
+    if(checkbox.checked)
+    {
+        status = 'Ativo'
+    }
+    else if (!checkbox.checked)
+    {
+        status = 'Inativo'
+    }
 
     const mentorObjet = await getMentor(mentor)
     const mentory = {
@@ -19,35 +42,53 @@ formNewMentory.addEventListener('submit', async element => {
         },
         status
     }
-    postMentory(mentory)
+    editMentory(mentory)
 })
 
+/* CARREGANDO DADOS RECUPERADOS NO FORMULARIO */
+const loadForm = async (mentory) => {
+    document.getElementById('title').value = mentory.title
+    document.getElementById('mentor-list').value = mentory.mentor.id
+    let checkbox = document.getElementById('status')
+    let status = mentory.status
+    if(status === 'Ativo')
+    {
+        checkbox.setAttribute('checked', 'checked')
+    }
+    else if (status === 'Inativo')
+    {
+        checkbox.removeAttribute('checked')
+    }
+}
+
 /* APÓS RECUPERADO OS DADOS DO FORMULARIO, ENVIANDO OS DADOS PARA A API */
-const postMentory = async (mentory) => {
-    await fetch('http://localhost:3000/mentory', {
-        method: 'POST',
+const editMentory = async (mentory) => {
+    await fetch(`http://localhost:3000/mentory/${mentoryID}`, {
+        method: 'PUT',
         headers: {
-            "Accept": 'aplication/json, text/plain, */*',
-            "Content-Type": 'application/json'
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(mentory)
     })
     window.location = 'home__mentory.html'
 }
 
-/* RECUPERANDO TODA LISTA DE MENTORES, PORÉM VOU UTILIZAR O ID E NOME APENAS */
+/* RECUPERANDO TODA LISTA DE MENTORES*/
 const getMentors = async () => {
     const response = await fetch('http://localhost:3000/mentor')
     const mentors = await response.json()
     return mentors
 }
 
+/* RECUPERANDO O MENTOR SELECIONADO*/
 const getMentor = async (id) => {
     const resposta = await fetch(`http://localhost:3000/mentor/${id}`)
     const mentor = await resposta.json()
     return mentor
 }
 
+/* INJETANDO TODA A LISTA DE MENTORES NO SELECT*/
 const loadSelect = async () => {
     const selectMentor = document.getElementById('mentor-list')
     const mentors = await getMentors()
@@ -63,15 +104,11 @@ const loadSelect = async () => {
     })
 }
 
-checkBox.addEventListener("change", async element => {
-    if(checkBox.value === "Inativo")
-    {
-        checkBox.value = "Ativo"
-    }
-    else if (checkBox.value === "Ativo")
-    {
-        checkBox.value = "Inativo"
-    }
-})
+const loadData = async () => {
+    loadSelect()
+    getIdUrl()
+    const mentory = await searchMentory(mentoryID)
+    loadForm(mentory)
+}
 
-loadSelect()
+loadData()

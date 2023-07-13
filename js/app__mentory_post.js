@@ -8,7 +8,17 @@ formNewMentory.addEventListener('submit', async element => {
     element.preventDefault()
     const title = formNewMentory.elements['title'].value
     const mentor = formNewMentory.elements['mentor'].value
-    const status = formNewMentory.elements['status'].value
+    
+    let status
+    let checkbox = document.getElementById('status')
+    if(checkbox.checked)
+    {
+        status = 'Ativo'
+    }
+    else if (!checkbox.checked)
+    {
+        status = 'Inativo'
+    }
 
     const mentorObjet = await getMentor(mentor)
     const mentory = {
