@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Mentor</title>
+    <title>Novo Aluno</title>
     <link rel="stylesheet" href="../css/style__default.css">
     <link rel="stylesheet" href="../css/style__mentor.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="../js/app__mentor_post.js" defer></script>
+    <script src="../js/app__student_post.js" defer></script>
 </head>
 <body class="h-100">
     <main class="h-100">
@@ -18,10 +18,10 @@
                 <div class="col-sm-2 sidebar">
                     <div class="defaultTitle">mentor<span>class</span></div>
                     <nav class="defaultSidebar">
-                        <div class="defaultItemSidebar activePage"><a href="home__mentor.html"><img src="../img/user-business.png">Mentores</a></div>
+                        <div class="defaultItemSidebar"><a href="home__mentor.html"><img src="../img/user-business.png">Mentores</a></div>
                         <div class="defaultItemSidebar"><a href="home__mentory.html"><img src="../img/notebook-and-pen.png">Mentorias</a></div>
                         <div class="defaultItemSidebar"><a href="home__class.html"><img src="../img/playback-progress.png">Turmas</a></div>
-                        <div class="defaultItemSidebar"><a href="home__student.html"><img src="../img/every-user.png">Alunos</a></div>
+                        <div class="defaultItemSidebar activePage"><a href="home__student.html"><img src="../img/every-user.png">Alunos</a></div>
                     </nav>
                 </div>
                 <div class="col-sm-10">
@@ -34,12 +34,12 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 right-section">
-                            <h1 class="mentorTitle"><span>1</span>Novo mentor</h1>
+                            <h1 class="mentorTitle"><span>1</span>Novo aluno</h1>
                             <section class="mentorContainerNewEdit">
                                 <div class="titleEditNew">Dados</div>
                                 <hr>
                                 <div class="">
-                                    <form id="new-mentor" method="post" action="">
+                                    <form id="new-student" method="post" action="">
                                         <div class="newEditMentorForm">
                                             <div>
                                                 <label for="name">Nome</label>
@@ -48,6 +48,10 @@
                                             <div>
                                                 <label for="email">E-mail</label>
                                                 <input name="email" type="email">
+                                            </div>
+                                            <div>
+                                                <label for="class">Turma</label>
+                                                <select name="class" id="class-list"></select>
                                             </div>
                                         </div>
                                         <div class="newEditMentorBtn"><button type="submit">Salvar</button></div>

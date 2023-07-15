@@ -105,5 +105,132 @@
       "status": "Ativo",
       "id": 6
     }
+  ],
+  "class": [
+    {
+      "name": "Turma 05",
+      "mentory": {
+        "title": "Gerenciamento de estados globais no ReactJS com Typescript",
+        "mentor": {
+          "name": "Itachi Uchiha",
+          "id": 7
+        },
+        "id": 0
+      },
+      "date": "2023-07-10",
+      "day": "Segunda-feira",
+      "time": {
+        "begin": "15:00",
+        "end": "16:00"
+      },
+      "meet": {
+        "total": "10",
+        "done": "1"
+      },
+      "link": "https://meet.google.com/mbta-kexh-syeh",
+      "id": 0
+    },
+    {
+      "name": "Turma 05",
+      "mentory": {
+        "title": "Gerenciamento de estados globais no ReactJS com Typescript",
+        "mentor": {
+          "name": "Ariana Grande",
+          "id": 6
+        },
+        "id": 0
+      },
+      "date": "2023-07-10",
+      "day": "Segunda-feira",
+      "time": {
+        "begin": "15:00",
+        "end": "16:00"
+      },
+      "meet": {
+        "total": "10",
+        "done": "5"
+      },
+      "link": "https://meet.google.com/mbta-kexh-syeh",
+      "id": 1
+    },
+    {
+      "name": "Turma 07",
+      "mentory": {
+        "title": "Gerenciamento de estados globais no ReactJS com Typescript",
+        "mentor": {
+          "name": "Ana Maria Braga",
+          "id": 3
+        },
+        "id": 5
+      },
+      "date": "2023-07-18",
+      "day": "Terça-feira",
+      "time": {
+        "begin": "12:00",
+        "end": "13:00"
+      },
+      "meet": {
+        "total": "10",
+        "done": "0"
+      },
+      "link": "https://meet.google.com/mbta-kexh-syeh",
+      "id": 2
+    }
+  ],
+  "student": [
+    {
+      "name": "Antónia Martins",
+      "email": "antonia@gmail.com",
+      "class": {
+        "name": "Turma 05",
+        "id": 0
+      },
+      "id": 0
+    },
+    {
+      "name": "Joaquina Ferreira",
+      "email": "joaquina@yahoo.com",
+      "class": {
+        "name": "Turma 05",
+        "id": 0
+      },
+      "id": 1
+    },
+    {
+      "name": "Francisco Almeida",
+      "email": "francisco@outlook.com",
+      "class": {
+        "name": "Turma 05",
+        "id": 0
+      },
+      "id": 2
+    },
+    {
+      "name": "Fernando Lopes",
+      "email": "fernando@gmail.com",
+      "class": {
+        "name": "Turma 05",
+        "id": 0
+      },
+      "id": 3
+    },
+    {
+      "name": "Camila Cabello",
+      "email": "camila@outlook.com",
+      "class": {
+        "name": "Turma 07",
+        "id": 2
+      },
+      "id": 4
+    },
+    {
+      "name": "Robert Santos Vieira",
+      "email": "rvieira@gmail.com",
+      "class": {
+        "name": "Turma 07",
+        "id": 2
+      },
+      "id": 5
+    }
   ]
 }
