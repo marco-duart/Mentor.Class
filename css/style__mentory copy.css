@@ -44,7 +44,7 @@
     width: 97%;
 }
 
-#mentor-Search input {
+.mentorSearch {
     width: 400px;
     height: 56px;
     border: 1.5px solid rgba(224, 224, 224, 1);

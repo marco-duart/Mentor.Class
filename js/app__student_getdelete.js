@@ -1,3 +1,5 @@
+const search = document.getElementById('student-search')
+
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */
 const inputStudents = async (students) => {
@@ -15,8 +17,12 @@ const inputStudents = async (students) => {
 }
 
 /* RECUPERANDO OS DADOS DA API */
-const getStudents = async () => {
-    const response = await fetch('http://localhost:3000/student')
+const getStudents = async (textParameter = null) => {
+    let text = ''
+    if(textParameter) {
+        text = `?q=${textParameter}`
+    }
+    const response = await fetch(`http://localhost:3000/student${text}`)
     const students = await response.json()
     inputStudents(students)
 }
@@ -33,5 +39,14 @@ const deleteStudent = async (id) => {
     })
     window.location = 'home__mentor.html'
 }
+
+search.addEventListener('keyup', element => {
+    const text = search.value
+    if(text === '') {
+        getStudents()
+    } else if(element.key === 'Enter') {
+        getStudents(text)
+    }
+})
 
 getStudents()

@@ -1,3 +1,5 @@
+const search = document.getElementById('mentor-search')
+
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */
 const inputMentors = async (mentors) => {
@@ -15,8 +17,12 @@ const inputMentors = async (mentors) => {
 }
 
 /* RECUPERANDO OS DADOS DA API */
-const getMentors = async () => {
-    const response = await fetch('http://localhost:3000/mentor')
+const getMentors = async (textParameter = null) => {
+    let text = ''
+    if(textParameter) {
+        text = `?q=${textParameter}`
+    }
+    const response = await fetch(`http://localhost:3000/mentor${text}`)
     const mentors = await response.json()
     inputMentors(mentors)
 }
@@ -33,5 +39,14 @@ const deleteMentor = async (id) => {
     })
     window.location = 'home__mentor.html'
 }
+
+search.addEventListener('keyup', element => {
+    const text = search.value
+    if(text === '') {
+        getMentors()
+    } else if(element.key === 'Enter') {
+        getMentors(text)
+    }
+})
 
 getMentors()

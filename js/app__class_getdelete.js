@@ -1,3 +1,5 @@
+const search = document.getElementById('class-search')
+
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */
 const inputClasses = async (classes) => {
@@ -20,8 +22,12 @@ const inputClasses = async (classes) => {
 }
 
 /* RECUPERANDO OS DADOS DA API */
-const getClasses = async () => {
-    const response = await fetch('http://localhost:3000/class')
+const getClasses = async (textParameter = null) => {
+    let text = ''
+    if(textParameter) {
+        text = `?q=${textParameter}`
+    }
+    const response = await fetch(`http://localhost:3000/class${text}`)
     const classes = await response.json()
     inputClasses(classes)
 }
@@ -38,5 +44,14 @@ const deleteClass = async (id) => {
     })
     window.location = 'home__class.html'
 }
+
+search.addEventListener('keyup', element => {
+    const text = search.value
+    if(text === '') {
+        getClasses()
+    } else if(element.key === 'Enter') {
+        getClasses(text)
+    }
+})
 
 getClasses()
