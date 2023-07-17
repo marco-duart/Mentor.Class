@@ -86,3 +86,22 @@
     color: #00C247;
     border: 1px solid #00C247;
 }
+
+/* NEW USER PAGE */
+
+.valid {
+    border: 1px solid green;
+  }
+  
+  .invalid {
+    border: 1px solid red;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .show {
+    display: block;
+    color: red;
+  }

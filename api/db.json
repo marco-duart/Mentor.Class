@@ -1,4 +1,16 @@
 {
+  "user": [
+    {
+      "email": "juliana@gmail.com",
+      "password": "123456",
+      "id": 0
+    },
+    {
+      "email": "itachi@uol.com.br",
+      "password": "12345678",
+      "id": 1
+    }
+  ],
   "mentor": [
     {
       "name": "Juliana Amaral",
