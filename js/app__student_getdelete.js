@@ -1,4 +1,8 @@
 const search = document.getElementById('student-search')
+/* ELEMENTOS DO LOGIN CONTÍNUO */
+const loginLocalStorage = localStorage
+document.getElementById('loginUser').innerText = loginLocalStorage.user
+document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */

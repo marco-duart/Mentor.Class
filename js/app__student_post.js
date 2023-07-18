@@ -1,4 +1,8 @@
 const formNewStudent = document.getElementById('new-student')
+/* ELEMENTOS DO LOGIN CONTÍNUO */
+const loginLocalStorage = localStorage
+document.getElementById('loginUser').innerText = loginLocalStorage.user
+document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
 
 /* -----------POST----------- */

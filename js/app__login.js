@@ -1,4 +1,5 @@
 const form = document.getElementById('form-login')
+localStorage.clear()
 
 
 const getUsers = async () => {
@@ -45,6 +46,8 @@ form.addEventListener('submit', async event => {
     users.forEach(element => {
       if (element.email === email.value && element.password === password.value) {
         window.location = 'html/home__mentor.html'
+        localStorage.setItem('user', `${element.name}`);
+        localStorage.setItem('email', `${element.email}`);
       } else {
         emailError.innerText = '*Os dados informados estão incorretos!'
         passError.innerText = '*Os dados informados estão incorretos!!'

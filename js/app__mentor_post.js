@@ -1,4 +1,8 @@
 const formNewMentor = document.getElementById('new-mentor')
+/* ELEMENTOS DO LOGIN CONTÍNUO */
+const loginLocalStorage = localStorage
+document.getElementById('loginUser').innerText = loginLocalStorage.user
+document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
 
 /* -----------POST----------- */

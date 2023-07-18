@@ -1,4 +1,8 @@
 const search = document.getElementById('mentory-search')
+/* ELEMENTOS DO LOGIN CONTÍNUO */
+const loginLocalStorage = localStorage
+document.getElementById('loginUser').innerText = loginLocalStorage.user
+document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */

@@ -16,26 +16,34 @@ const postUser = async (user) => {
 form.addEventListener('submit', event => {
   event.preventDefault()
   /* INICIANDO VARIAVEIS */
+  const name = document.getElementById('name')
   const email = document.getElementById('email')
   const password = document.getElementById('password')
   const confirmPassword = document.getElementById('confirmPassword')
-  /* VARIAVEL TAG CONTAINER */
-  const container = document.getElementById('container')
   /* VARIAVEIS DE RETORNO MENSAGEM DE ERRO */
+  const nameError = document.getElementById('nameError')
   const emailError = document.getElementById('emailError')
   const passError = document.getElementById('passError')
   const rePassError = document.getElementById('rePassError')
 
-  const newUser = async (email, password) => {
+  const newUser = async (name, email, password) => {
     const user = {
-        email,
-        password
+      name,
+      email,
+      password
     }
     postUser(user)
   }
 
 
-
+  if (name.value === '') {
+    name.className='invalid'
+    nameError.className='show'
+  }
+  else {
+    name.className='valid'
+    nameError.className='hide'
+  }
   if (email.value === '') {
     email.className='invalid'
     emailError.className='show'
@@ -72,7 +80,7 @@ form.addEventListener('submit', event => {
     rePassError.innerText = '*As senhas devem ser iguais'
     passError.className='show'
     rePassError.className='show'
-  } else if (email.value !== '' && password.value !== '' && confirmPassword.value !== '') {
-    newUser(email.value, password.value)
+  } else if (name.value !== '' && email.value !== '' && password.value !== '' && confirmPassword.value !== '') {
+    newUser(name.value, email.value, password.value)
   }
 })

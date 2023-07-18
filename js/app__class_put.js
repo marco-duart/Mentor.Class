@@ -1,4 +1,8 @@
 const formEditClass = document.getElementById('edit-class')
+/* ELEMENTOS DO LOGIN CONTÍNUO */
+const loginLocalStorage = localStorage
+document.getElementById('loginUser').innerText = loginLocalStorage.user
+document.getElementById('loginEmail').innerText = loginLocalStorage.email
 let classID = null
 
 /* -----------PUT----------- */

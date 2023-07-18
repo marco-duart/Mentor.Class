@@ -1,4 +1,9 @@
 const formEditMentory = document.getElementById('edit-mentory')
+/* ELEMENTOS DO LOGIN CONTÍNUO */
+const loginLocalStorage = localStorage
+document.getElementById('loginUser').innerText = loginLocalStorage.user
+document.getElementById('loginEmail').innerText = loginLocalStorage.email
+
 let mentoryID = null
 
 /* -----------PUT----------- */

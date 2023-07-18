@@ -120,7 +120,7 @@
     flex-direction: column;
     gap: 0.5rem;
 }
-
+/* Diferente */
 .newEditMentoryForm input[name="title"] {
     width: 650px;
     height: 56px;

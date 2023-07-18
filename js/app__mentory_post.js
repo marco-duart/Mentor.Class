@@ -1,5 +1,9 @@
 const formNewMentory = document.getElementById('new-mentory')
 const checkBox = document.getElementById('status')
+/* ELEMENTOS DO LOGIN CONTÍNUO */
+const loginLocalStorage = localStorage
+document.getElementById('loginUser').innerText = loginLocalStorage.user
+document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
 
 /* -----------POST----------- */

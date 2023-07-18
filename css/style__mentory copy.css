@@ -128,7 +128,7 @@
     flex-direction: column;
     gap: 0.5rem;
 }
-
+/* Diferente */
 .newEditMentoryForm input[name="nameClass"], input[name="linkClass"] {
     width: 400px;
     height: 56px;

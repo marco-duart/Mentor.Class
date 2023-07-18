@@ -1,14 +1,22 @@
 {
   "user": [
     {
+      "name": "Juliana Almeida",
       "email": "juliana@gmail.com",
       "password": "123456",
       "id": 0
     },
     {
+      "name": "Itachi Uchiha",
       "email": "itachi@uol.com.br",
       "password": "12345678",
       "id": 1
+    },
+    {
+      "name": "Ariana Grande",
+      "email": "ariana@gmail.com",
+      "password": "12345678",
+      "id": 2
     }
   ],
   "mentor": [
