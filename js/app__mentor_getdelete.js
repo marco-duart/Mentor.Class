@@ -24,7 +24,7 @@ const inputMentors = async (mentors) => {
 const getMentors = async (textParameter = null) => {
     let text = ''
     if(textParameter) {
-        text = `?q=${textParameter}`
+        text = textParameter
     }
     const response = await fetch(`http://localhost:3000/mentor${text}`)
     const mentors = await response.json()
@@ -44,12 +44,18 @@ const deleteMentor = async (id) => {
     window.location = 'home__mentor.html'
 }
 
+/* ORDENAÇÃO */
+const sorting = (text) => {
+    getMentors(`?_sort=${text}&_order=ASC`)
+}
+
+/* CORREÇÃO CAMPO DE PESQUISA */
 search.addEventListener('keyup', element => {
     const text = search.value
     if(text === '') {
         getMentors()
     } else if(element.key === 'Enter') {
-        getMentors(text)
+        getMentors(`?q=${text}`)
     }
 })
 
