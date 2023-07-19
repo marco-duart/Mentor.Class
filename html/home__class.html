@@ -45,13 +45,13 @@
                                 <div class="mentoryContainerTable">
                                     <table class="mentoryTable">
                                         <thead>
-                                            <th>Turma</th>
-                                            <th>Mentor</th>
-                                            <th>Mentoria</th>
-                                            <th>Data de início</th>
-                                            <th>Dia da semana</th>
-                                            <th>Horário</th>
-                                            <th>Encontros</th>
+                                            <th>Turma <span id="tableHeadNameClass" onclick="sorting('name','tableHeadNameClass')">⇓</span></th>
+                                            <th>Mentor <span id="tableHeadMentorMentory" onclick="sorting('mentory.mentor.name','tableHeadMentorMentory')">⇓</span></th>
+                                            <th>Mentoria <span id="tableHeadTitleMentory" onclick="sorting('mentory.title','tableHeadTitleMentory')">⇓</span></th>
+                                            <th>Data de início <span id="tableHeadDateClass" onclick="sorting('date','tableHeadDateClass')">⇓</span></th>
+                                            <th>Dia da semana <span id="tableHeadDayClass" onclick="sorting('day','tableHeadDayClass')">⇓</span></th>
+                                            <th>Horário <span id="tableHeadTimeClass" onclick="sorting('time.begin','tableHeadTimeClass')">⇓</span></th>
+                                            <th>Encontros <span id="tableHeadMeetClass" onclick="sorting('meet.total','tableHeadMeetClass')">⇓</span></th>
                                             <th>Ações</th>
                                         </thead>
                                         <tbody id="table-content">

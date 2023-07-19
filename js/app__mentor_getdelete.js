@@ -45,11 +45,19 @@ const deleteMentor = async (id) => {
 }
 
 /* ORDENAÇÃO */
-const sorting = (text) => {
-    getMentors(`?_sort=${text}&_order=ASC`)
+const sorting = (text, id) => {
+    const selectedTableHead = document.getElementById(id)
+    if(selectedTableHead.innerText === "⇓") {
+        getMentors(`?_sort=${text}&_order=DESC`)
+        selectedTableHead.innerText = "⇑"
+    }
+    else if(selectedTableHead.innerText === "⇑") {
+        getMentors(`?_sort=${text}&_order=ASC`)
+        selectedTableHead.innerText = "⇓"
+    }
 }
 
-/* CORREÇÃO CAMPO DE PESQUISA */
+/* PESQUISA COM ENVIO COMPLETO DE PARÂMETRO */
 search.addEventListener('keyup', element => {
     const text = search.value
     if(text === '') {

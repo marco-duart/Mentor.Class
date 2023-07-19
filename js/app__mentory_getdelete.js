@@ -25,7 +25,7 @@ const inputMentories = async (mentories) => {
 const getMentories = async (textParameter = null) => {
     let text = ''
     if(textParameter) {
-        text = `?q=${textParameter}`
+        text = textParameter
     }
     const response = await fetch(`http://localhost:3000/mentory${text}`)
     const mentories = await response.json()
@@ -45,12 +45,26 @@ const deleteMentory = async (id) => {
     window.location = 'home__mentory.html'
 }
 
+/* ORDENAÇÃO */
+const sorting = (text, id) => {
+    const selectedTableHead = document.getElementById(id)
+    if(selectedTableHead.innerText === "⇓") {
+        getMentories(`?_sort=${text}&_order=DESC`)
+        selectedTableHead.innerText = "⇑"
+    }
+    else if(selectedTableHead.innerText === "⇑") {
+        getMentories(`?_sort=${text}&_order=ASC`)
+        selectedTableHead.innerText = "⇓"
+    }
+}
+
+/* PESQUISA COM ENVIO COMPLETO DE PARÂMETRO */
 search.addEventListener('keyup', element => {
     const text = search.value
     if(text === '') {
         getMentories()
     } else if(element.key === 'Enter') {
-        getMentories(text)
+        getMentories(`?q=${text}`)
     }
 })
 

@@ -29,7 +29,7 @@ const inputClasses = async (classes) => {
 const getClasses = async (textParameter = null) => {
     let text = ''
     if(textParameter) {
-        text = `?q=${textParameter}`
+        text = textParameter
     }
     const response = await fetch(`http://localhost:3000/class${text}`)
     const classes = await response.json()
@@ -49,12 +49,26 @@ const deleteClass = async (id) => {
     window.location = 'home__class.html'
 }
 
+/* ORDENAÇÃO */
+const sorting = (text, id) => {
+    const selectedTableHead = document.getElementById(id)
+    if(selectedTableHead.innerText === "⇓") {
+        getClasses(`?_sort=${text}&_order=DESC`)
+        selectedTableHead.innerText = "⇑"
+    }
+    else if(selectedTableHead.innerText === "⇑") {
+        getClasses(`?_sort=${text}&_order=ASC`)
+        selectedTableHead.innerText = "⇓"
+    }
+}
+
+/* PESQUISA COM ENVIO COMPLETO DE PARÂMETRO */
 search.addEventListener('keyup', element => {
     const text = search.value
     if(text === '') {
         getClasses()
     } else if(element.key === 'Enter') {
-        getClasses(text)
+        getClasses(`?q=${text}`)
     }
 })
 

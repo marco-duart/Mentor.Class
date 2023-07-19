@@ -24,7 +24,7 @@ const inputStudents = async (students) => {
 const getStudents = async (textParameter = null) => {
     let text = ''
     if(textParameter) {
-        text = `?q=${textParameter}`
+        text = textParameter
     }
     const response = await fetch(`http://localhost:3000/student${text}`)
     const students = await response.json()
@@ -44,12 +44,26 @@ const deleteStudent = async (id) => {
     window.location = 'home__mentor.html'
 }
 
+/* ORDENAÇÃO */
+const sorting = (text, id) => {
+    const selectedTableHead = document.getElementById(id)
+    if(selectedTableHead.innerText === "⇓") {
+        getStudents(`?_sort=${text}&_order=DESC`)
+        selectedTableHead.innerText = "⇑"
+    }
+    else if(selectedTableHead.innerText === "⇑") {
+        getStudents(`?_sort=${text}&_order=ASC`)
+        selectedTableHead.innerText = "⇓"
+    }
+}
+
+/* PESQUISA COM ENVIO COMPLETO DE PARÂMETRO */
 search.addEventListener('keyup', element => {
     const text = search.value
     if(text === '') {
         getStudents()
     } else if(element.key === 'Enter') {
-        getStudents(text)
+        getStudents(`?q=${text}`)
     }
 })
 
