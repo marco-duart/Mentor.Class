@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 
+/* LOGIN HEADER CLASSES */
 .logUser {
     display: flex;
     justify-content: end;
@@ -35,7 +36,7 @@
     font-weight: 600;
 }
 
-.logUserInfo div:last-child {
+.logUserInfo div:nth-child(2), div:nth-child(3) {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     color: #757575;
@@ -56,6 +57,7 @@
     color: #757575;
 }
 
+/* SIDEBAR CLASSES */
 .sidebar {
     background-color: #482D83;
     display: flex;
@@ -91,6 +93,152 @@
     color: #FFFFFF;
 }
 
+/* RIGHT SECTION CLASSES */
+
+.rightSection {
+    background-color: rgba(252, 252, 252, 1);
+}
+
+.rightSectionTitle {
+    font-family: 'Sora', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.rightSectionContainerList {
+    display: grid;
+    place-items: center;
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 25px 0px rgba(163, 163, 163, 0.2);
+    margin-bottom: 30vh;
+}
+.rightSectionContainerNewEdit {
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 25px 0px rgba(163, 163, 163, 0.2);
+    margin-bottom: 30vh;
+    padding: 2rem;
+}
+
+.rightSectionContainerOptions {
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+.rightSectionContainerOptions button {
+    width: 271px;
+    height: 56px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 194, 71, 1);
+    border-radius: 16px;
+}
+.rightSectionContainerContent {
+    width: 97%;
+}
+
+.rightSectionContainerSearch {
+    width: 400px;
+    height: 56px;
+    border: 1.5px solid rgba(224, 224, 224, 1);
+    border-radius: 16px;
+}
+
+.rightSectionContainerAddItemButton {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+}
+
+.rightSectionContainerAddItemButton span {
+    font-size: 24px;
+}
+
+.rightSectionContainerTable {
+    width: 100%;
+}
+
+.rightSectionContainerTable th {
+    height: 72px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(72, 45, 131, 1);
+}
+.rightSectionContainerTable th:first-child {
+    border-radius: 16px 0 0 0;
+}
+.rightSectionContainerTable th:last-child {
+    border-radius: 0 16px 0 0;
+}
+
+.rightSectionContainerTable th:last-child {
+    text-align: right;
+    padding-right: 60px;
+}
+
+.itemTable {
+    height: 80px;
+}
+
+.rightSectionContainerTable tr:nth-child(odd) {
+    background-color: rgba(250, 250, 250, 1);
+}
+
+.rightSectionContainerTable tr:nth-child(even) {
+    background-color: rgba(245, 245, 245, 1);
+}
+
+.rightSectionContainerTable td, th {
+    padding: 0 2rem;
+}
+
+
+.rightSectionTableIcon {
+    height: 80px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rightSectionTableIcon span {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(224, 224, 224, 1);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.rightSectionTableIcon img {
+    width: 24px;
+    height: 24px;
+}
+
+.rightSectionTableTitle {
+    font-size: 20px;
+    font-family: 'Sora', sans-serif;
+    color: rgba(72, 45, 131, 1);
+}
+
+.rightSectionContainerForm {
+    display: flex;
+    gap: 2rem;
+}
+
+.rightSectionContainerForm div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* INTERACTIVE CLASSES */
 .activePage {
     font-weight: 600;
     background-color: rgba(118, 130, 193, 0.3);
@@ -101,4 +249,8 @@
 }
 .show {
     display: block;
+}
+
+.theadSorting {
+    cursor: pointer;
 }

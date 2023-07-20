@@ -36,20 +36,20 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12 right-section">
-                            <h1 class="mentorTitle">Mentores</h1>
-                            <section class="mentorContainer">
-                                <div class="mentorContainerOptions">
+                        <div class="col-sm-12 rightSection">
+                            <h1 class="rightSectionTitle">Mentores</h1>
+                            <section class="rightSectionContainerList">
+                                <div class="rightSectionContainerOptions">
                                     <div>
-                                        <input id="mentor-search" class="mentorSearch" type="search">
+                                        <input id="mentor-search" class="rightSectionContainerSearch" type="search">
                                     </div>
-                                    <div><button><a href="new__mentor.html"><span>+</span>Novo Mentor</a></button></div>
+                                    <div><button><a href="new__mentor.html" class="rightSectionContainerAddItemButton"><span>✛</span>Novo Mentor</a></button></div>
                                 </div>
-                                <div class="mentorContainerTable">
-                                    <table class="mentorTable">
+                                <div class="rightSectionContainerContent">
+                                    <table class="rightSectionContainerTable">
                                         <thead>
-                                            <th>Nome <span id="tableHeadNameMentor" onclick="sorting('name','tableHeadNameMentor')">⇓</span></th>
-                                            <th>E-mail <span id="tableHeadEmailMentor" onclick="sorting('email','tableHeadEmailMentor')">⇓</span></th>
+                                            <th>Nome <span id="table-head-name-mentor" class="theadSorting" onclick="sorting('name','table-head-name-mentor')">⇓</span></th>
+                                            <th>E-mail <span id="table-head-email-mentor" class="theadSorting" onclick="sorting('email','table-head-email-mentor')">⇓</span></th>
                                             <th>Ações</th>
                                         </thead>
                                         <tbody id="table-content">

@@ -33,21 +33,21 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12 right-section">
-                            <h1 class="mentoryTitle">Mentorias</h1>
-                            <section class="mentoryContainer">
-                                <div class="mentoryContainerOptions">
+                        <div class="col-sm-12 rightSection">
+                            <h1 class="rightSectionTitle">Mentorias</h1>
+                            <section class="rightSectionContainerList">
+                                <div class="rightSectionContainerOptions">
                                     <div>
-                                        <input id="mentory-search" class="mentorSearch" type="search">
+                                        <input id="mentory-search" class="rightSectionContainerSearch" type="search">
                                     </div>
-                                    <div><button><a href="new__mentory.html"><span>+</span>Nova Mentoria</a></button></div>
+                                    <div><button><a href="new__mentory.html" class="rightSectionContainerAddItemButton"><span>✛</span>Nova Mentoria</a></button></div>
                                 </div>
-                                <div class="mentoryContainerTable">
-                                    <table class="mentoryTable">
+                                <div class="rightSectionContainerContent">
+                                    <table class="rightSectionContainerTable">
                                         <thead>
-                                            <th>Título da mentoria <span id="tableHeadTitleMentory" onclick="sorting('title','tableHeadTitleMentory')">⇓</span></th>
-                                            <th>Mentor <span id="tableHeadMentorMentory" onclick="sorting('mentor.name','tableHeadMentorMentory')">⇓</span></th>
-                                            <th>status <span id="tableHeadStatusMentory" onclick="sorting('status','tableHeadStatusMentory')">⇓</span></th>
+                                            <th>Título da mentoria <span id="table-head-title-mentory" class="theadSorting" onclick="sorting('title','table-head-title-mentory')">⇓</span></th>
+                                            <th>Mentor <span id="table-head-mentor-mentory" class="theadSorting" onclick="sorting('mentor.name','table-head-mentor-mentory')">⇓</span></th>
+                                            <th>Status <span id="table-head-status-mentory" class="theadSorting" onclick="sorting('status','table-head-status-mentory')">⇓</span></th>
                                             <th>Ações</th>
                                         </thead>
                                         <tbody id="table-content">

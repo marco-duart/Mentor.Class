@@ -14,7 +14,7 @@ const inputMentors = async (mentors) => {
         <tr class="itemTable">
             <td>${mentor.name}</td>
             <td>${mentor.email}</td>
-            <td class="optionIco"><span onclick="editMentor(${mentor.id})"><img src="../img/edit.png" alt=""></span><span onclick="deleteMentor(${mentor.id})"><img src="../img/delete.png" alt=""></span></td>
+            <td class="rightSectionTableIcon"><span onclick="editMentor(${mentor.id})"><img src="../img/edit.png" alt=""></span><span onclick="deleteMentor(${mentor.id})"><img src="../img/delete.png" alt=""></span></td>
         </tr>
         `
     });

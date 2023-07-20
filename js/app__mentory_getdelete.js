@@ -10,12 +10,18 @@ const inputMentories = async (mentories) => {
     const content = document.getElementById('table-content')
     content.innerHTML = ''
     mentories.forEach(mentory => {
+        let classStatus
+        if(mentory.status === 'Ativo') {
+            classStatus = 'itemMentoryValid'
+        } else if(mentory.status === 'Inativo') {
+            classStatus = 'itemMentoryInvalid'
+        }
         content.innerHTML = content.innerHTML + `
         <tr class="itemTable">
             <td>${mentory.title}</td>
             <td>${mentory.mentor.name}</td>
-            <td>${mentory.status}</td>
-            <td class="optionIco"><span onclick="editMentory(${mentory.id})"><img src="../img/edit.png" alt=""></span><span onclick="deleteMentory(${mentory.id})"><img src="../img/delete.png" alt=""></span></td>
+            <td class="${classStatus}"><span>${mentory.status}</span></td>
+            <td class="rightSectionTableIcon"><span onclick="editMentory(${mentory.id})"><img src="../img/edit.png" alt=""></span><span onclick="deleteMentory(${mentory.id})"><img src="../img/delete.png" alt=""></span></td>
         </tr>
         `
     });

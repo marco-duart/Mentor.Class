@@ -1,4 +1,4 @@
-.MentorForm input {
+.studentForm input {
     width: 400px;
     height: 56px;
     padding: 1rem;
@@ -6,12 +6,20 @@
     border-radius: 16px;
 }
 
-.MentorForm label {
+.studentForm select {
+    width: 400px;
+    height: 56px;
+    padding: 1rem;
+    border: 1.5px solid rgba(224, 224, 224, 1);
+    border-radius: 16px;
+}
+
+.studentForm label {
     font-size: 14px;
     color: rgba(117, 117, 117, 1);
 }
 
-.MentorBtn button {
+.studentBtn button {
     width: 400px;
     height: 48px;
     font-weight: 600;

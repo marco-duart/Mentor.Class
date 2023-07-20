@@ -19,7 +19,7 @@ const inputClasses = async (classes) => {
             <td>${classUnit.day}</td>
             <td>${classUnit.time.begin}h</td>
             <td>${classUnit.meet.done}/${classUnit.meet.total}</td>
-            <td class="optionIco"><span onclick="editClass(${classUnit.id})"><img src="../img/edit.png" alt=""></span><span onclick="deleteClass(${classUnit.id})"><img src="../img/delete.png" alt=""></span></td>
+            <td class="rightSectionTableIcon"><span onclick="editClass(${classUnit.id})"><img src="../img/edit.png" alt=""></span><span onclick="deleteClass(${classUnit.id})"><img src="../img/delete.png" alt=""></span></td>
         </tr>
         `
     });

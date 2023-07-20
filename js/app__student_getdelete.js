@@ -14,7 +14,7 @@ const inputStudents = async (students) => {
         <tr class="itemTable">
             <td>${student.name}</td>
             <td>${student.email}</td>
-            <td class="optionIco"><span onclick="editStudent(${student.id})"><img src="../img/edit.png" alt=""></span><span onclick="deleteStudent(${student.id})"><img src="../img/delete.png" alt=""></span></td>
+            <td class="rightSectionTableIcon"><span onclick="editStudent(${student.id})"><img src="../img/edit.png" alt=""></span><span onclick="deleteStudent(${student.id})"><img src="../img/delete.png" alt=""></span></td>
         </tr>
         `
     });
