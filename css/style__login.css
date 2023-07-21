@@ -91,17 +91,34 @@
 
 .valid {
     border: 1px solid green;
-  }
+}
   
-  .invalid {
+.invalid {
     border: 1px solid red;
-  }
+}
   
-  .hide {
+.hide {
     display: none;
-  }
+}
   
-  .show {
+.show {
     display: block;
     color: red;
-  }
+}
+.novo {
+    position: relative;
+}
+.eyePassword {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.eyePassword img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+}
+
+/* ERROR PAGE */
+

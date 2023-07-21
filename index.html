@@ -18,23 +18,25 @@
                 <div class="titleLogin fontSora">Realize seu Login</div>
                 <form id="form-login" class="form fontPoppins" action="">
                     <div class="formItem">
-                        <label for="">E-mail</label>
-                        <input id="email" type="text">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="text" name="email" placeholder="Insira seu e-mail">
                         <small id='emailError' class='hide'></small>
                     </div>
                     <div class="formItem">
-                        <label for="">Senha</label>
-                        <input id="password" type="password">
+                        <label for="password">Senha</label>
+                        <div class="novo">
+                            <input id="password" type="password" name="password" placeholder="Insira sua senha">
+                            <span class="eyePassword show"><img src="img/hide.png" alt=""></span>
+                            <span class="eyePassword hide"><img src="img/show.png" alt=""></span>
+                        </div>
                         <small id='passError' class='hide'></small>
-                        <!-- <span class="material-symbols-outlined">visibility_off</span>
-                        <span class="material-symbols-outlined">visibility</span> Colocar em position, criar alguma função para transição de senha visivel(se for possível)-->
                     </div>
                     <div class="optionsLogin">
                         <span> 
-                            <input type="checkbox" name="" id="">
-                            <label for="" aria-placeholder="Insira sua senha">Lembrar-me</label>
+                            <input type="checkbox" name="remenber" id="remenber">
+                            <label for="remenber">Lembrar-me</label>
                         </span>
-                        <a href="">Esqueci minha senha</a>
+                        <a href="error.html">Esqueci minha senha</a>
                     </div>
                     <div><button class="btnLogin">Entrar</button></div>
                 </form>

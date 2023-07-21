@@ -1,5 +1,18 @@
 const form = document.getElementById('form-login')
-localStorage.clear()
+const checkbox = document.getElementById('remenber')
+
+const startPage = () => {
+  console.log(localStorage.checked)
+  if(localStorage.checked === 'true') {
+    document.getElementById('email').value = localStorage.email
+    checkbox.checked = true
+  }
+  else if(localStorage.checked === 'false') {
+    localStorage.removeItem('user')
+    localStorage.removeItem('email')
+    checkbox.checked = false
+  }
+}
 
 
 const getUsers = async () => {
@@ -45,9 +58,17 @@ form.addEventListener('submit', async event => {
     const users = await getUsers()
     users.forEach(element => {
       if (element.email === email.value && element.password === password.value) {
+        if(checkbox.checked)
+        {
+          localStorage.setItem('checked', 'true')
+        }
+        else if (!checkbox.checked)
+        {
+          localStorage.setItem('checked', 'false')
+        }
+        localStorage.setItem('user', `${element.name}`)
+        localStorage.setItem('email', `${element.email}`)
         window.location = 'html/home__mentor.html'
-        localStorage.setItem('user', `${element.name}`);
-        localStorage.setItem('email', `${element.email}`);
       } else {
         emailError.innerText = '*Os dados informados estão incorretos!'
         passError.innerText = '*Os dados informados estão incorretos!!'
@@ -57,3 +78,5 @@ form.addEventListener('submit', async event => {
     })
   }
 })
+
+startPage()

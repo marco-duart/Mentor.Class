@@ -1,3 +1,4 @@
+/* PARÂMETROS INICIAIS E GERAIS */
 @import url('https://fonts.cdnfonts.com/css/satoshi');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sora&display=swap');
 
@@ -6,6 +7,10 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
+}
+
+input {
+    padding-left: 1rem;
 }
 
 /* LOGIN HEADER CLASSES */
@@ -105,6 +110,13 @@
     font-weight: 600;
 }
 
+.rightSectionTitleBack {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(238, 238, 238, 1);
+    border-radius: 50%;
+}
+
 .rightSectionContainerList {
     display: grid;
     place-items: center;
@@ -136,6 +148,18 @@
 }
 .rightSectionContainerContent {
     width: 97%;
+}
+
+.rightSectionSearch {
+    position: relative;
+}
+
+.rightSectionSearch img {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    right: 16px;
 }
 
 .rightSectionContainerSearch {
