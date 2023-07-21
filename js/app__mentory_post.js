@@ -78,14 +78,15 @@ const loadSelect = async () => {
 }
 
 checkBox.addEventListener("change", async element => {
-    if(checkBox.value === "Inativo")
+    if(checkBox.checked)
     {
-        checkBox.value = "Ativo"
+
     }
-    else if (checkBox.value === "Ativo")
+    else if (checkBox.checked)
     {
-        checkBox.value = "Inativo"
+
     }
+    console.log(checkBox.checked)
 })
 
 loadSelect()

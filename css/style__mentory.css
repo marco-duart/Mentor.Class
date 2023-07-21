@@ -14,7 +14,7 @@
     border-radius: 16px;
 }
 
-.MentoryForm label {
+.MentoryFormLabel {
     font-size: 14px;
     color: rgba(117, 117, 117, 1);
 }
@@ -45,4 +45,52 @@
     border-radius: 8px;
     color: rgba(255, 51, 51, 1);
     background-color: rgba(255, 225, 225, 1);
+}
+
+/* CHECKBOX EM ESTILO SWITCH */
+.switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 58px;
+    height: 28px;
+    padding: 2px;
+    background-color: rgba(117, 117, 117, 1);
+    border-radius: 16px;
+}
+
+.switch label {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+}
+
+/* DEMOREI PRA ACHAR ESSE SELETOR DO PAI */
+.switch:has(:checked) {
+    background-color: rgba(0, 194, 71, 1);
+}
+
+.activeSmall {
+    position: absolute;
+    left: 4rem;
+    display: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inactiveSmall {
+    position: absolute;
+    left: 4rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.checkbox:checked ~ label {
+    transform: translateX(30px);
+}
+.checkbox:checked ~ .inactiveSmall {
+    display: none;
+}
+.checkbox:checked ~ .activeSmall {
+    display: inline-block;
 }
