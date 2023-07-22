@@ -25,6 +25,21 @@
 .subtitleLogin {
     color: #424242;
     font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newUserLogin {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.newUserLogin a {
+    text-decoration: none;
+    color: #424242;
+    font-size: 14px;
 }
 
 .form {
@@ -80,6 +95,18 @@
     cursor: pointer;
 }
 
+.changePageLogin {
+    width: 400px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+    color: #FFFFFF;
+    background-color: #482D83;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
 
 /* Criar função para transição de cor dos input junto com validação dos mesmos */
 .inputOk {
@@ -105,7 +132,7 @@
     display: block;
     color: red;
 }
-.novo {
+.relativeDiv {
     position: relative;
 }
 .eyePassword {

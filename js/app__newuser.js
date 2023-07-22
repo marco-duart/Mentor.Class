@@ -13,23 +13,34 @@ const postUser = async (user) => {
     window.location = '../index.html'
 }
 
-const showHidePass = (param) => {
-  let temporaryValue
-  const password = document.getElementById('password')
-  const hidePass = document.getElementById('eyeClosed')
-  const showPass = document.getElementById('eyeOpened')
-  if(param === 'eyeClosed') {
+const showHidePass = (passInput,hideId,showId,param) => {
+  const password = document.getElementById(passInput)
+  const hidePass = document.getElementById(hideId)
+  const showPass = document.getElementById(showId)
+  if(param === 'show') {
     hidePass.className = 'eyePassword hide'
     showPass.className = 'eyePassword show'
-    temporaryValue = password.value
     password.type = "text"
-    password.value = temporaryValue
-  } else if(param === 'eyeOpened') {
+  } else if(param === 'hide') {
     showPass.className = 'eyePassword hide'
     hidePass.className = 'eyePassword show'
-    temporaryValue = password.value
     password.type = "password"
-    password.value = temporaryValue
+  }
+}
+
+const changePage = (toHide,toShow) => {
+  const hide = document.getElementById(toHide)
+  const show = document.getElementById(toShow)
+
+  hide.classList = 'formItem hide'
+  show.classList = 'formItem'
+
+  if(toHide === 'page-one') {
+    document.getElementById('submit-btn-login').classList = 'btnLogin'
+    document.getElementById('return-page').classList = 'newUserLogin hide'
+  } else if(toHide === 'page-two') {
+    document.getElementById('submit-btn-login').classList = 'btnLogin hide'
+    document.getElementById('return-page').classList = 'newUserLogin'
   }
 }
 

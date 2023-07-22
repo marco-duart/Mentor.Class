@@ -14,7 +14,7 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row positionCard">
             <div class="col">
-                <div class="subtitleLogin fontSora">Seja bem vindo!</div>
+                <div class="subtitleLogin fontSora">Seja bem vindo! <span class="newUserLogin"><a href="html/new__user.html">Novo Usuário</a></span></div>
                 <div class="titleLogin fontSora">Realize seu Login</div>
                 <form id="form-login" class="form fontPoppins" action="">
                     <div class="formItem">
@@ -24,11 +24,11 @@
                     </div>
                     <div class="formItem">
                         <label for="password">Senha</label>
-                        <div class="novo">
+                        <div class="relativeDiv">
                             <input id="password" type="password" name="password" placeholder="Insira sua senha">
                             <div id="showHidePass">
-                                <span id="eyeClosed" class="eyePassword show" onclick="showHidePass('eyeClosed')"><img src="img/hide.png" alt=""></span>
-                                <span id="eyeOpened" class="eyePassword hide" onclick="showHidePass('eyeOpened')"><img src="img/show.png" alt=""></span>
+                                <span id="eye-closed" class="eyePassword show" onclick="showHidePass('password','eye-closed','eye-opened','show')"><img src="img/hide.png" alt=""></span>
+                                <span id="eye-opened" class="eyePassword hide" onclick="showHidePass('password','eye-closed','eye-opened','hide')"><img src="img/show.png" alt=""></span>
                             </div>
                         </div>
                         <small id='passError' class='hide'></small>

@@ -14,34 +14,40 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row positionCard">
             <div class="col">
-                <div class="subtitleLogin fontSora">Seja bem vindo!</div>
+                <div class="subtitleLogin fontSora">Seja bem vindo! <span id="return-page" class="newUserLogin"><a href="../index.html">Voltar</a></span></div>
                 <div class="titleLogin fontSora">Realize seu Cadastro</div>
                 <form class="form fontPoppins" id="form-signup" action="">
-                    <div class="formItem">
+                    <div id="page-one" class="formItem">
                         <label for="">Nome</label>
                         <input id="name" type="text">
                         <small id='nameError' class='hide'>*Digite o Nome!</small>
                         <label for="">E-mail</label>
                         <input id="email" type="text">
                         <small id='emailError' class='hide'>*Digite o e-mail!</small>
+                        <div class="changePageLogin" onclick="changePage('page-one','page-two')">Proxima página</div>
                     </div>
-                    <div class="formItem hide">
+                    <div id="page-two" class="formItem hide">
                         <label for="">Senha</label>
-                        <input id="password" type="password">
-                        <div id="showHidePass">
-                            <span id="eyeClosed" class="eyePassword show" onclick="showHidePass('eyeClosed')"><img src="img/hide.png" alt=""></span>
-                            <span id="eyeOpened" class="eyePassword hide" onclick="showHidePass('eyeOpened')"><img src="img/show.png" alt=""></span>
+                        <div class="relativeDiv">
+                            <input id="password" type="password">
+                            <div id="showHidePass">
+                                <span id="eye-closed-pass" class="eyePassword show" onclick="showHidePass('password','eye-closed-pass','eye-opened-pass','show')"><img src="../img/hide.png" alt=""></span>
+                                <span id="eye-opened-pass" class="eyePassword hide" onclick="showHidePass('password','eye-closed-pass','eye-opened-pass','hide')"><img src="../img/show.png" alt=""></span>
+                            </div>
                         </div>
                         <small id='passError' class='hide'></small>
                         <label for="">Repita</label>
-                        <input id="confirmPassword" type="password">
-                        <div id="showHidePass">
-                            <span id="eyeClosed" class="eyePassword show" onclick="showHidePass('eyeClosed')"><img src="img/hide.png" alt=""></span>
-                            <span id="eyeOpened" class="eyePassword hide" onclick="showHidePass('eyeOpened')"><img src="img/show.png" alt=""></span>
+                        <div class="relativeDiv">
+                            <input id="confirmPassword" type="password">
+                            <div id="showHidePass">
+                                <span id="eye-closed-repass" class="eyePassword show" onclick="showHidePass('confirmPassword','eye-closed-repass','eye-opened-repass','show')"><img src="../img/hide.png" alt=""></span>
+                                <span id="eye-opened-repass" class="eyePassword hide" onclick="showHidePass('confirmPassword','eye-closed-repass','eye-opened-repass','hide')"><img src="../img/show.png" alt=""></span>
+                            </div>
                         </div>
                         <small id='rePassError' class='hide'></small>
+                        <div class="changePageLogin" onclick="changePage('page-two','page-one')">Página anterior</div>
                     </div>
-                    <div><button class="btnLogin hide">Cadastrar</button></div>
+                    <div><button id="submit-btn-login" class="btnLogin hide" type="submit">Cadastrar</button></div>
                 </form>
             </div>
           </div>
