@@ -26,8 +26,10 @@
                         <label for="password">Senha</label>
                         <div class="novo">
                             <input id="password" type="password" name="password" placeholder="Insira sua senha">
-                            <span class="eyePassword show"><img src="img/hide.png" alt=""></span>
-                            <span class="eyePassword hide"><img src="img/show.png" alt=""></span>
+                            <div id="showHidePass">
+                                <span id="eyeClosed" class="eyePassword show" onclick="showHidePass('eyeClosed')"><img src="img/hide.png" alt=""></span>
+                                <span id="eyeOpened" class="eyePassword hide" onclick="showHidePass('eyeOpened')"><img src="img/show.png" alt=""></span>
+                            </div>
                         </div>
                         <small id='passError' class='hide'></small>
                     </div>

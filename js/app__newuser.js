@@ -13,6 +13,26 @@ const postUser = async (user) => {
     window.location = '../index.html'
 }
 
+const showHidePass = (param) => {
+  let temporaryValue
+  const password = document.getElementById('password')
+  const hidePass = document.getElementById('eyeClosed')
+  const showPass = document.getElementById('eyeOpened')
+  if(param === 'eyeClosed') {
+    hidePass.className = 'eyePassword hide'
+    showPass.className = 'eyePassword show'
+    temporaryValue = password.value
+    password.type = "text"
+    password.value = temporaryValue
+  } else if(param === 'eyeOpened') {
+    showPass.className = 'eyePassword hide'
+    hidePass.className = 'eyePassword show'
+    temporaryValue = password.value
+    password.type = "password"
+    password.value = temporaryValue
+  }
+}
+
 form.addEventListener('submit', event => {
   event.preventDefault()
   /* INICIANDO VARIAVEIS */

@@ -2,7 +2,6 @@ const form = document.getElementById('form-login')
 const checkbox = document.getElementById('remenber')
 
 const startPage = () => {
-  console.log(localStorage.checked)
   if(localStorage.checked === 'true') {
     document.getElementById('email').value = localStorage.email
     checkbox.checked = true
@@ -78,5 +77,25 @@ form.addEventListener('submit', async event => {
     })
   }
 })
+
+const showHidePass = (param) => {
+  let temporaryValue
+  const password = document.getElementById('password')
+  const hidePass = document.getElementById('eyeClosed')
+  const showPass = document.getElementById('eyeOpened')
+  if(param === 'eyeClosed') {
+    hidePass.className = 'eyePassword hide'
+    showPass.className = 'eyePassword show'
+    temporaryValue = password.value
+    password.type = "text"
+    password.value = temporaryValue
+  } else if(param === 'eyeOpened') {
+    showPass.className = 'eyePassword hide'
+    hidePass.className = 'eyePassword show'
+    temporaryValue = password.value
+    password.type = "password"
+    password.value = temporaryValue
+  }
+}
 
 startPage()

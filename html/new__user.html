@@ -25,23 +25,23 @@
                         <input id="email" type="text">
                         <small id='emailError' class='hide'>*Digite o e-mail!</small>
                     </div>
-                    <div class="formItem">
+                    <div class="formItem hide">
                         <label for="">Senha</label>
                         <input id="password" type="password">
+                        <div id="showHidePass">
+                            <span id="eyeClosed" class="eyePassword show" onclick="showHidePass('eyeClosed')"><img src="img/hide.png" alt=""></span>
+                            <span id="eyeOpened" class="eyePassword hide" onclick="showHidePass('eyeOpened')"><img src="img/show.png" alt=""></span>
+                        </div>
                         <small id='passError' class='hide'></small>
                         <label for="">Repita</label>
                         <input id="confirmPassword" type="password">
+                        <div id="showHidePass">
+                            <span id="eyeClosed" class="eyePassword show" onclick="showHidePass('eyeClosed')"><img src="img/hide.png" alt=""></span>
+                            <span id="eyeOpened" class="eyePassword hide" onclick="showHidePass('eyeOpened')"><img src="img/show.png" alt=""></span>
+                        </div>
                         <small id='rePassError' class='hide'></small>
-                        <!-- <span class="material-symbols-outlined">visibility_off</span>
-                        <span class="material-symbols-outlined">visibility</span> Colocar em position, criar alguma função para transição de senha visivel(se for possível)-->
                     </div>
-                    <div class="optionsLogin">
-                        <span>
-                            <input type="checkbox" name="" id="">
-                            <label for="" aria-placeholder="Insira sua senha">Lembrar-me</label>
-                        </span>
-                    </div>
-                    <div><button class="btnLogin">Cadastrar</button></div>
+                    <div><button class="btnLogin hide">Cadastrar</button></div>
                 </form>
             </div>
           </div>

@@ -77,16 +77,4 @@ const loadSelect = async () => {
     })
 }
 
-checkBox.addEventListener("change", async element => {
-    if(checkBox.checked)
-    {
-
-    }
-    else if (checkBox.checked)
-    {
-
-    }
-    console.log(checkBox.checked)
-})
-
 loadSelect()
