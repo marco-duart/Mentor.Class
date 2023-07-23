@@ -134,13 +134,13 @@ input {
     border-radius: 24px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 25px 0px rgba(163, 163, 163, 0.2);
-    margin-bottom: 30vh;
+    margin-bottom: 10vh;
 }
 .rightSectionContainerNewEdit {
     border-radius: 24px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 25px 0px rgba(163, 163, 163, 0.2);
-    margin-bottom: 30vh;
+    margin-bottom: 10vh;
     padding: 2rem;
 }
 
@@ -271,6 +271,21 @@ input {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.rightSectionArrows {
+    width: 100%;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    cursor: pointer;
 }
 
 /* INTERACTIVE CLASSES */

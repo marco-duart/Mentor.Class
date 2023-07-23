@@ -4,6 +4,9 @@ const loginLocalStorage = localStorage
 document.getElementById('loginUser').innerText = loginLocalStorage.user
 document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
+/* CONTADOR DA PÁGINA */
+let countPage = 1
+
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */
 const inputMentors = async (mentors) => {
@@ -22,7 +25,7 @@ const inputMentors = async (mentors) => {
 
 /* RECUPERANDO OS DADOS DA API */
 const getMentors = async (textParameter = null) => {
-    let text = ''
+    let text = `?_page=${countPage}&_limit=5`
     if(textParameter) {
         text = textParameter
     }
@@ -42,6 +45,18 @@ const deleteMentor = async (id) => {
         method: 'DELETE'
     })
     window.location = 'home__mentor.html'
+}
+
+/* PAGINAÇÃO */
+const pagination = (operation) => {
+    if(operation === '+' && countPage<100) {
+        countPage++
+        getMentors(`?_page=${countPage}&_limit=5`)
+    }
+    if(operation === '-' && countPage>1){
+        countPage--
+        getMentors(`?_page=${countPage}&_limit=5`)
+    }
 }
 
 /* ORDENAÇÃO */

@@ -10,12 +10,13 @@ const inputClasses = async (classes) => {
     const content = document.getElementById('table-content')
     content.innerHTML = ''
     classes.forEach(classUnit => {
+        const fixedDate = fixDate(classUnit.date)
         content.innerHTML = content.innerHTML + `
         <tr class="itemTable">
             <td>${classUnit.name}</td>
             <td>${classUnit.mentory.mentor.name}</td>
             <td>${classUnit.mentory.title}</td>
-            <td>${classUnit.date}</td>
+            <td>${fixedDate}</td>
             <td>${classUnit.day}</td>
             <td>${classUnit.time.begin}h</td>
             <td>${classUnit.meet.done}/${classUnit.meet.total}</td>
@@ -23,6 +24,14 @@ const inputClasses = async (classes) => {
         </tr>
         `
     });
+}
+
+/* CORREÇÃO DA DATA */
+const fixDate = () => {
+    let valor = '2023-07-10'
+    let dateSplit = valor.split('-')
+    let dateReverse = dateSplit.reverse()
+    return dateReverse.join('/')
 }
 
 /* RECUPERANDO OS DADOS DA API */
@@ -73,3 +82,4 @@ search.addEventListener('keyup', element => {
 })
 
 getClasses()
+fixDate()
