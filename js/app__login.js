@@ -78,23 +78,19 @@ form.addEventListener('submit', async event => {
   }
 })
 
-const showHidePass = (param) => {
+const showHidePass = (idPassword, idClosedEye, idOpenedEye, action) => {
   let temporaryValue
-  const password = document.getElementById('password')
-  const hidePass = document.getElementById('eyeClosed')
-  const showPass = document.getElementById('eyeOpened')
-  if(param === 'eyeClosed') {
+  const password = document.getElementById(idPassword)
+  const hidePass = document.getElementById(idClosedEye)
+  const showPass = document.getElementById(idOpenedEye)
+  if(action === 'show') {
     hidePass.className = 'eyePassword hide'
     showPass.className = 'eyePassword show'
-    temporaryValue = password.value
     password.type = "text"
-    password.value = temporaryValue
-  } else if(param === 'eyeOpened') {
+  } else if(action === 'hide') {
     showPass.className = 'eyePassword hide'
     hidePass.className = 'eyePassword show'
-    temporaryValue = password.value
     password.type = "password"
-    password.value = temporaryValue
   }
 }
 
