@@ -2,7 +2,7 @@ const form = document.getElementById('form-signup')
 
 
 const postUser = async (user) => {
-    await fetch('http://localhost:3000/user', {
+    await fetch('https://api-mentor-class.onrender.com/user', {
         method: 'POST',
         headers: {
             "Accept": 'aplication/json, text/plain, */*',

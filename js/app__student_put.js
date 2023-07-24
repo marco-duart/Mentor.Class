@@ -16,7 +16,7 @@ const getIdUrl = () => {
 }
 
 const searchStudent = async (studentID) => {
-    const response = await fetch(`http://localhost:3000/student/${studentID}`)
+    const response = await fetch(`https://api-mentor-class.onrender.com/student/${studentID}`)
     const student = await response.json()
     return student
 }
@@ -46,7 +46,7 @@ const loadForm = async (student) => {
 }
 
 const editStudent = async (student) => {
-    await fetch(`http://localhost:3000/student/${studentID}`, {
+    await fetch(`https://api-mentor-class.onrender.com/student/${studentID}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -59,13 +59,13 @@ const editStudent = async (student) => {
 
 /* RECUPERANDO TODA LISTA DE TURMAS*/
 const getClasses = async () => {
-    const response = await fetch('http://localhost:3000/class')
+    const response = await fetch('https://api-mentor-class.onrender.com/class')
     const classes = await response.json()
     return classes
 }
 
 const getClass = async (id) => {
-    const resposta = await fetch(`http://localhost:3000/class/${id}`)
+    const resposta = await fetch(`https://api-mentor-class.onrender.com/class/${id}`)
     const classUnit = await resposta.json()
     return classUnit
 }

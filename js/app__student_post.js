@@ -27,7 +27,7 @@ formNewStudent.addEventListener('submit', async element => {
 
 /* APÓS RECUPERADO OS DADOS DO FORMULARIO, ENVIANDO OS DADOS PARA A API */
 const postStudent = async (student) => {
-    await fetch('http://localhost:3000/student', {
+    await fetch('https://api-mentor-class.onrender.com/student', {
         method: 'POST',
         headers: {
             "Accept": 'aplication/json, text/plain, */*',
@@ -40,13 +40,13 @@ const postStudent = async (student) => {
 
 /* RECUPERANDO TODA LISTA DE TURMAS*/
 const getClasses = async () => {
-    const response = await fetch('http://localhost:3000/class')
+    const response = await fetch('https://api-mentor-class.onrender.com/class')
     const classes = await response.json()
     return classes
 }
 
 const getClass = async (id) => {
-    const resposta = await fetch(`http://localhost:3000/class/${id}`)
+    const resposta = await fetch(`https://api-mentor-class.onrender.com/class/${id}`)
     const classUnit = await resposta.json()
     return classUnit
 }

@@ -38,7 +38,7 @@ formNewMentory.addEventListener('submit', async element => {
 
 /* APÓS RECUPERADO OS DADOS DO FORMULARIO, ENVIANDO OS DADOS PARA A API */
 const postMentory = async (mentory) => {
-    await fetch('http://localhost:3000/mentory', {
+    await fetch('https://api-mentor-class.onrender.com/mentory', {
         method: 'POST',
         headers: {
             "Accept": 'aplication/json, text/plain, */*',
@@ -51,13 +51,13 @@ const postMentory = async (mentory) => {
 
 /* RECUPERANDO TODA LISTA DE MENTORES, PORÉM VOU UTILIZAR O ID E NOME APENAS */
 const getMentors = async () => {
-    const response = await fetch('http://localhost:3000/mentor')
+    const response = await fetch('https://api-mentor-class.onrender.com/mentor')
     const mentors = await response.json()
     return mentors
 }
 
 const getMentor = async (id) => {
-    const resposta = await fetch(`http://localhost:3000/mentor/${id}`)
+    const resposta = await fetch(`https://api-mentor-class.onrender.com/mentor/${id}`)
     const mentor = await resposta.json()
     return mentor
 }
