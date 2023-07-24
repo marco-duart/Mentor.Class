@@ -4,6 +4,10 @@ const loginLocalStorage = localStorage
 document.getElementById('loginUser').innerText = loginLocalStorage.user
 document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
+/* CONTADOR DA PÁGINA E QUANTIDADE MÁXIMA DE ITENS */
+let currentPage = 1
+let maxItensAPI
+
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */
 const inputMentories = async (mentories) => {
@@ -25,15 +29,17 @@ const inputMentories = async (mentories) => {
         </tr>
         `
     });
+    fixArrows()
 }
 
 /* RECUPERANDO OS DADOS DA API */
 const getMentories = async (textParameter = null) => {
-    let text = ''
+    let text = `?_page=${currentPage}&_limit=5`
     if(textParameter) {
         text = textParameter
     }
     const response = await fetch(`http://localhost:3000/mentory${text}`)
+    maxItensAPI = parseInt(response.headers.get('x-total-count'))
     const mentories = await response.json()
     inputMentories(mentories)
 }
@@ -49,6 +55,36 @@ const deleteMentory = async (id) => {
         method: 'DELETE'
     })
     window.location = 'home__mentory.html'
+}
+
+/* PAGINAÇÃO */
+const pagination = (operation) => {
+    if(operation === '+' && currentPage<maxItensAPI/5) {
+        currentPage++
+        getMentories(`?_page=${currentPage}&_limit=5`)
+    }
+    if(operation === '-' && currentPage>1){
+        currentPage--
+        getMentories(`?_page=${currentPage}&_limit=5`)
+    }
+}
+
+/* PAGINAÇÃO: CORREÇÃO DAS SETAS */
+
+const fixArrows = () => {
+    if(currentPage>=maxItensAPI/5 && currentPage === 1) {
+        document.getElementById('next-arrow').classList = 'arrows hideArrow'
+        document.getElementById('previous-arrow').classList = 'arrows hideArrow'
+    } else if(currentPage>=maxItensAPI/5) {
+        document.getElementById('next-arrow').classList = 'arrows hideArrow'
+        document.getElementById('previous-arrow').classList = 'arrows'
+    } else if(currentPage === 1) {
+        document.getElementById('next-arrow').classList = 'arrows'
+        document.getElementById('previous-arrow').classList = 'arrows hideArrow'
+    } else {
+        document.getElementById('next-arrow').classList = 'arrows'
+        document.getElementById('previous-arrow').classList = 'arrows'
+    }
 }
 
 /* ORDENAÇÃO */

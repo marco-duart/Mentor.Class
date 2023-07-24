@@ -59,6 +59,21 @@
       "name": "Itachi Uchiha",
       "email": "itachi@uol.com.br",
       "id": 7
+    },
+    {
+      "name": "Nikola Tesla",
+      "email": "nikola@bol.com.br",
+      "id": 8
+    },
+    {
+      "name": "Alan Turing",
+      "email": "alan.math@gmail.com",
+      "id": 9
+    },
+    {
+      "name": "Marie Curie",
+      "email": "marie@google.com",
+      "id": 10
     }
   ],
   "mentory": [

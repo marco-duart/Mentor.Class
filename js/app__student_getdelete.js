@@ -4,6 +4,10 @@ const loginLocalStorage = localStorage
 document.getElementById('loginUser').innerText = loginLocalStorage.user
 document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
+/* CONTADOR DA PÁGINA E QUANTIDADE MÁXIMA DE ITENS */
+let currentPage = 1
+let maxItensAPI
+
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */
 const inputStudents = async (students) => {
@@ -18,15 +22,17 @@ const inputStudents = async (students) => {
         </tr>
         `
     });
+    fixArrows()
 }
 
 /* RECUPERANDO OS DADOS DA API */
 const getStudents = async (textParameter = null) => {
-    let text = ''
+    let text = `?_page=${currentPage}&_limit=5`
     if(textParameter) {
         text = textParameter
     }
     const response = await fetch(`http://localhost:3000/student${text}`)
+    maxItensAPI = parseInt(response.headers.get('x-total-count'))
     const students = await response.json()
     inputStudents(students)
 }
@@ -42,6 +48,36 @@ const deleteStudent = async (id) => {
         method: 'DELETE'
     })
     window.location = 'home__mentor.html'
+}
+
+/* PAGINAÇÃO */
+const pagination = (operation) => {
+    if(operation === '+' && currentPage<maxItensAPI/5) {
+        currentPage++
+        getStudents(`?_page=${currentPage}&_limit=5`)
+    }
+    if(operation === '-' && currentPage>1){
+        currentPage--
+        getStudents(`?_page=${currentPage}&_limit=5`)
+    }
+}
+
+/* PAGINAÇÃO: CORREÇÃO DAS SETAS */
+
+const fixArrows = () => {
+    if(currentPage>=maxItensAPI/5 && currentPage === 1) {
+        document.getElementById('next-arrow').classList = 'arrows hideArrow'
+        document.getElementById('previous-arrow').classList = 'arrows hideArrow'
+    } else if(currentPage>=maxItensAPI/5) {
+        document.getElementById('next-arrow').classList = 'arrows hideArrow'
+        document.getElementById('previous-arrow').classList = 'arrows'
+    } else if(currentPage === 1) {
+        document.getElementById('next-arrow').classList = 'arrows'
+        document.getElementById('previous-arrow').classList = 'arrows hideArrow'
+    } else {
+        document.getElementById('next-arrow').classList = 'arrows'
+        document.getElementById('previous-arrow').classList = 'arrows'
+    }
 }
 
 /* ORDENAÇÃO */

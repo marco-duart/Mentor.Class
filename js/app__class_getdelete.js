@@ -4,6 +4,10 @@ const loginLocalStorage = localStorage
 document.getElementById('loginUser').innerText = loginLocalStorage.user
 document.getElementById('loginEmail').innerText = loginLocalStorage.email
 
+/* CONTADOR DA PÁGINA E QUANTIDADE MÁXIMA DE ITENS */
+let currentPage = 1
+let maxItensAPI
+
 /* -----------GET----------- */
 /* INJETANDO CONTEUDO NO HTML */
 const inputClasses = async (classes) => {
@@ -24,11 +28,11 @@ const inputClasses = async (classes) => {
         </tr>
         `
     });
+    fixArrows()
 }
 
 /* CORREÇÃO DA DATA */
-const fixDate = () => {
-    let valor = '2023-07-10'
+const fixDate = (valor) => {
     let dateSplit = valor.split('-')
     let dateReverse = dateSplit.reverse()
     return dateReverse.join('/')
@@ -36,11 +40,12 @@ const fixDate = () => {
 
 /* RECUPERANDO OS DADOS DA API */
 const getClasses = async (textParameter = null) => {
-    let text = ''
+    let text = `?_page=${currentPage}&_limit=5`
     if(textParameter) {
         text = textParameter
     }
     const response = await fetch(`http://localhost:3000/class${text}`)
+    maxItensAPI = parseInt(response.headers.get('x-total-count'))
     const classes = await response.json()
     inputClasses(classes)
 }
@@ -56,6 +61,36 @@ const deleteClass = async (id) => {
         method: 'DELETE'
     })
     window.location = 'home__class.html'
+}
+
+/* PAGINAÇÃO */
+const pagination = (operation) => {
+    if(operation === '+' && currentPage<maxItensAPI/5) {
+        currentPage++
+        getClasses(`?_page=${currentPage}&_limit=5`)
+    }
+    if(operation === '-' && currentPage>1){
+        currentPage--
+        getClasses(`?_page=${currentPage}&_limit=5`)
+    }
+}
+
+/* PAGINAÇÃO: CORREÇÃO DAS SETAS */
+
+const fixArrows = () => {
+    if(currentPage>=maxItensAPI/5 && currentPage === 1) {
+        document.getElementById('next-arrow').classList = 'arrows hideArrow'
+        document.getElementById('previous-arrow').classList = 'arrows hideArrow'
+    } else if(currentPage>=maxItensAPI/5) {
+        document.getElementById('next-arrow').classList = 'arrows hideArrow'
+        document.getElementById('previous-arrow').classList = 'arrows'
+    } else if(currentPage === 1) {
+        document.getElementById('next-arrow').classList = 'arrows'
+        document.getElementById('previous-arrow').classList = 'arrows hideArrow'
+    } else {
+        document.getElementById('next-arrow').classList = 'arrows'
+        document.getElementById('previous-arrow').classList = 'arrows'
+    }
 }
 
 /* ORDENAÇÃO */
@@ -82,4 +117,3 @@ search.addEventListener('keyup', element => {
 })
 
 getClasses()
-fixDate()

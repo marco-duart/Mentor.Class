@@ -300,6 +300,10 @@ input {
 .show {
     display: block;
 }
+.hideArrow {
+    color: #FFFFFF;
+    cursor: none;
+}
 
 .theadSorting {
     cursor: pointer;
