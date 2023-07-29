@@ -15,7 +15,7 @@ const getIdUrl = () => {
 }
 
 const searchClass = async (classID) => {
-    const response = await fetch(`https://api-mentor-class.onrender.com/class/${classID}`)
+    const response = await fetch(`${urlAPI}/class/${classID}`)
     const classUnit = await response.json()
     return classUnit
 } 
@@ -76,7 +76,7 @@ const loadForm = async (classUnit) => {
 
 /* APÓS RECUPERADO OS DADOS DO FORMULARIO, ENVIANDO OS DADOS PARA A API */
 const editClass = async (classUnit) => {
-    await fetch(`https://api-mentor-class.onrender.com/class/${classID}`, {
+    await fetch(`${urlAPI}/class/${classID}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -89,13 +89,13 @@ const editClass = async (classUnit) => {
 
 /* RECUPERANDO TODA LISTA DE MENTORES*/
 const getMentors = async () => {
-    const response = await fetch('https://api-mentor-class.onrender.com/mentor')
+    const response = await fetch(`${urlAPI}/mentor`)
     const mentors = await response.json()
     return mentors
 }
 
 const getMentor = async (id) => {
-    const resposta = await fetch(`https://api-mentor-class.onrender.com/mentor/${id}`)
+    const resposta = await fetch(`${urlAPI}/mentor/${id}`)
     const mentor = await resposta.json()
     return mentor
 }
@@ -118,13 +118,13 @@ const loadSelectMentor = async () => {
 
 /* RECUPERANDO TODA LISTA DE MENTORIAS*/
 const getMentories = async () => {
-    const response = await fetch('https://api-mentor-class.onrender.com/mentory')
+    const response = await fetch(`${urlAPI}/mentory`)
     const mentories = await response.json()
     return mentories
 }
 
 const getMentory = async (id) => {
-    const resposta = await fetch(`https://api-mentor-class.onrender.com/mentory/${id}`)
+    const resposta = await fetch(`${urlAPI}/mentory/${id}`)
     const mentory = await resposta.json()
     return mentory
 }

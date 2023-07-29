@@ -21,7 +21,7 @@ formNewMentor.addEventListener('submit', async element => {
 
 /* APÓS RECUPERADO OS DADOS DO FORMULARIO, ENVIANDO OS DADOS PARA A API */
 const postMentor = async (mentor) => {
-    await fetch('https://api-mentor-class.onrender.com/mentor', {
+    await fetch(`${urlAPI}/mentor`, {
         method: 'POST',
         headers: {
             "Accept": 'aplication/json, text/plain, */*',

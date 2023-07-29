@@ -139,6 +139,60 @@
       },
       "status": "Ativo",
       "id": 6
+    },
+    {
+      "title": "Matemática Discreta e Suas Aplicações",
+      "mentor": {
+        "name": "Alan Turing",
+        "id": 9
+      },
+      "status": "Ativo",
+      "id": 7
+    },
+    {
+      "title": "Engenharia de Software",
+      "mentor": {
+        "name": "Carlos Eduardo",
+        "id": 1
+      },
+      "status": "Ativo",
+      "id": 8
+    },
+    {
+      "title": "Programação Orientada à Objetos",
+      "mentor": {
+        "name": "Nikola Tesla",
+        "id": 8
+      },
+      "status": "Ativo",
+      "id": 9
+    },
+    {
+      "title": "Introdução a Big Data e Internet das Coisas (IOT)",
+      "mentor": {
+        "name": "Marie Curie",
+        "id": 10
+      },
+      "status": "Ativo",
+      "id": 10
+    },
+    {
+      "title": "Estrutura de Dados",
+      "mentor": {
+        "name": "Paola Oliveira Silva",
+        "id": 2
+      },
+      "status": "Inativo",
+      "id": 11
+    },
+    {
+      "title": "Inglês",
+      "mentor": {
+        "name": "Juliana Amaral",
+        "id": 0
+      },
+      "status": "Ativo",
+      "id": 12
     }
   ],
   "class": [
@@ -159,8 +213,8 @@
         "end": "16:00"
       },
       "meet": {
-        "total": "10",
-        "done": "1"
+        "total": "40",
+        "done": "0"
       },
       "link": "https://meet.google.com/mbta-kexh-syeh",
       "id": 0
@@ -191,12 +245,9 @@
     {
       "name": "Turma 07",
       "mentory": {
-        "title": "Gerenciamento de estados globais no ReactJS com Typescript",
-        "mentor": {
-          "name": "Ana Maria Braga",
-          "id": 3
-        },
-        "id": 5
+        "title": "Estrutura de Dados",
+        "mentor": {},
+        "id": 11
       },
       "date": "2023-07-18",
       "day": "Terça-feira",
@@ -205,11 +256,126 @@
         "end": "13:00"
       },
       "meet": {
-        "total": "10",
+        "total": "8",
         "done": "0"
       },
       "link": "https://meet.google.com/mbta-kexh-syeh",
       "id": 2
+    },
+    {
+      "name": "Turma 10",
+      "mentory": {
+        "title": "Matemática Discreta e Suas Aplicações",
+        "mentor": {
+          "name": "Alan Turing",
+          "id": 9
+        },
+        "id": 7
+      },
+      "date": "2023-07-31",
+      "day": "Segunda-feira",
+      "time": {
+        "begin": "17:40",
+        "end": "19:00"
+      },
+      "meet": {
+        "total": "15",
+        "done": "0"
+      },
+      "link": "https://meet.google.com/erha-jyus-syeh",
+      "id": 3
+    },
+    {
+      "name": "Turma 11",
+      "mentory": {
+        "title": "Engenharia de Software",
+        "mentor": {
+          "name": "Marie Curie",
+          "id": 10
+        },
+        "id": 8
+      },
+      "date": "2023-08-24",
+      "day": "Quinta-feira",
+      "time": {
+        "begin": "07:40",
+        "end": "09:00"
+      },
+      "meet": {
+        "total": "20",
+        "done": "0"
+      },
+      "link": "https://meet.google.com/aeds-erta-lkhg",
+      "id": 4
+    },
+    {
+      "name": "Turma 12",
+      "mentory": {
+        "title": "Programação Orientada à Objetos",
+        "mentor": {
+          "name": "Júlio Roberto",
+          "id": 4
+        },
+        "id": 9
+      },
+      "date": "2023-07-31",
+      "day": "Segunda-feira",
+      "time": {
+        "begin": "14:00",
+        "end": "15:30"
+      },
+      "meet": {
+        "total": "25",
+        "done": "0"
+      },
+      "link": "https://meet.google.com/gffrt-bvnvb-dfgg",
+      "id": 5
+    },
+    {
+      "name": "Turma 13",
+      "mentory": {
+        "title": "Introdução a Big Data e Internet das Coisas (IOT)",
+        "mentor": {
+          "name": "Nikola Tesla",
+          "id": 8
+        },
+        "id": 10
+      },
+      "date": "2023-08-02",
+      "day": "Quarta-feira",
+      "time": {
+        "begin": "14:00",
+        "end": "15:30"
+      },
+      "meet": {
+        "total": "32",
+        "done": "0"
+      },
+      "link": "https://meet.google.com/wqef-hgae-yrty",
+      "id": 6
+    },
+    {
+      "name": "Turma 14",
+      "mentory": {
+        "title": "Inglês",
+        "mentor": {
+          "name": "Ariana Grande",
+          "id": 6
+        },
+        "id": 12
+      },
+      "date": "2023-09-01",
+      "day": "Sexta-feira",
+      "time": {
+        "begin": "08:00",
+        "end": "10:00"
+      },
+      "meet": {
+        "total": "85",
+        "done": "0"
+      },
+      "link": "https://meet.google.com/qwew-fagar-arwer",
+      "id": 7
     }
   ],
   "student": [

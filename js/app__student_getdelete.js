@@ -31,7 +31,7 @@ const getStudents = async (textParameter = null) => {
     if(textParameter) {
         text = textParameter
     }
-    const response = await fetch(`https://api-mentor-class.onrender.com/student${text}`)
+    const response = await fetch(`${urlAPI}/student${text}`)
     maxItensAPI = parseInt(response.headers.get('x-total-count'))
     const students = await response.json()
     inputStudents(students)
@@ -44,7 +44,7 @@ const editStudent = (id) => {
 
 /* -----------DELETE----------- */
 const deleteStudent = async (id) => {
-    await fetch(`https://api-mentor-class.onrender.com/student/${id}`, {
+    await fetch(`${urlAPI}/student/${id}`, {
         method: 'DELETE'
     })
     window.location = 'home__mentor.html'

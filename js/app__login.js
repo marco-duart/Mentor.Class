@@ -1,6 +1,7 @@
 const form = document.getElementById('form-login')
 const checkbox = document.getElementById('remenber')
 
+/* VERIFICANDO SE POSSUI A INFORMAÇÃO DE "LEMBRAR" NO LOCAL STORAGE */
 const startPage = () => {
   if(localStorage.checked === 'true') {
     document.getElementById('email').value = localStorage.email
@@ -13,14 +14,13 @@ const startPage = () => {
   }
 }
 
-
 const getUsers = async () => {
-    const response = await fetch('https://api-mentor-class.onrender.com/user')
+    const response = await fetch(`${urlAPI}/user`)
     const users = await response.json()
     return users
 }
 
-/* ATUALIZAR E DE EVENTO NOS .JS */
+/* EVENTO DE LOGIN E MENSAGENS DE ERRO */
 form.addEventListener('submit', async event => {
   event.preventDefault()
   /* INICIANDO VARIAVEIS */
@@ -31,29 +31,8 @@ form.addEventListener('submit', async event => {
   const emailError = document.getElementById('emailError')
   const passError = document.getElementById('passError')
 
-
-
-  if (email.value === '') {
-    email.className='invalid'
-    emailError.innerText = '*Digite o email!'
-    emailError.className='show'
-  }
-  else {
-    email.className='valid'
-    emailError.className='hide'
-  }
-  
-  if (password.value === '') {
-    password.className='invalid'
-    passError.innerText = '*Digite a senha!'
-    passError.className='show'
-  }
-  else {
-    password.className='valid'
-    passError.className='hide'
-  }
-
-  if (email.value !== '' && password.value !== '') {
+  /* TESTANDO PRIMEIRAMENTE SE ESTÁ TUDO CERTO */
+  if(email.value !== '' && password.value !== '') {
     const users = await getUsers()
     users.forEach(element => {
       if (element.email === email.value && element.password === password.value) {
@@ -68,16 +47,37 @@ form.addEventListener('submit', async event => {
         localStorage.setItem('user', `${element.name}`)
         localStorage.setItem('email', `${element.email}`)
         window.location = 'html/home__mentor.html'
-      } else {
-        emailError.innerText = '*Os dados informados estão incorretos!'
-        passError.innerText = '*Os dados informados estão incorretos!!'
-        emailError.className='show'
-        passError.className='show'
       }
     })
+    console.log(emailError.className)
+    emailError.innerText = '*Os dados informados estão incorretos!'
+    passError.innerText = '*Os dados informados estão incorretos!'
+    emailError.className = 'show'
+    passError.className = 'show'
+  } else {
+    if (email.value === '') {
+      email.className='invalid'
+      emailError.innerText = '*Digite o email!'
+      emailError.className='show'
+    }
+    else {
+      email.className='valid'
+      emailError.className='hide'
+    }
+    
+    if (password.value === '') {
+      password.className='invalid'
+      passError.innerText = '*Digite a senha!'
+      passError.className='show'
+    }
+    else {
+      password.className='valid'
+      passError.className='hide'
+    }
   }
 })
 
+/* MOSTRAR E ESCONDER SENHA */
 const showHidePass = (idPassword, idClosedEye, idOpenedEye, action) => {
   let temporaryValue
   const password = document.getElementById(idPassword)

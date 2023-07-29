@@ -16,7 +16,7 @@ const getIdUrl = () => {
 }
 
 const searchMentor = async (mentorID) => {
-    const response = await fetch(`https://api-mentor-class.onrender.com/mentor/${mentorID}`)
+    const response = await fetch(`${urlAPI}/mentor/${mentorID}`)
     const mentor = await response.json()
     return mentor
 }
@@ -40,7 +40,7 @@ const loadForm = async (mentor) => {
 }
 
 const editMentor = async (mentor) => {
-    await fetch(`https://api-mentor-class.onrender.com/mentor/${mentorID}`, {
+    await fetch(`${urlAPI}/mentor/${mentorID}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json, text/plain, */*',

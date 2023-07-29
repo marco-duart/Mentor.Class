@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style__login.css">
+    <link rel="stylesheet" href="css/style__error.css">
 </head>
 <body>
-    <div class="container-fluid background">
-        <div class="row">
-            <div class="col">
-                <h1>Não é possível acessar esse site</h1>
-                <div>Verifique se há um erro de digitação em www.algo.com.com.br.</div>
-                <div>Se o endereço estiver correto, <span>tente executar o Diagnóstico de Rede do Windows</span>.</div>
-                <div>DNS_PROBE_FINISHED_NXDOMAIN</div>
-                <button><a href="">Recarregar</a></button>
-            </div>
-        </div>
+    <div class="errorContainer">
+        <section class="errorCard">
+            <img src="img/404.png" alt="image">
+            <h1 class="errorCardTitle">Não é possível acessar esse site</h1>
+            <p class="errorCardMessage">Verifique se há um erro de digitação em mentor-class.vercel.app.</p>
+            <div class="errorCardDetails">Se o endereço estiver correto, <span class="errorDetailLink"><a href="javascript:diagnoseErrors()">tente executar o Diagnóstico de Rede do Windows</a></span>.</div>
+            <div class="errorCardCode">DNS_PROBE_FINISHED_NXDOMAIN</div>
+            <button class="errorCardBtn"><a href="error.html">Recarregar</a></button>
+        </section>
     </div>
 </body>
 </html>

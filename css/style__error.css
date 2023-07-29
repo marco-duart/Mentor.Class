@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* ERROR PAGE */
+
+.errorContainer {
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+
+.errorCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -205px;
+    margin-left: -287px;
+}
+
+.errorCard img {
+    width: 72px;
+    height: 72px;
+    margin: 0 0 40px;
+}
+
+.errorCardTitle {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.errorCardMessage {
+    font-size: .95rem;
+    color: rgb(95, 99, 104)
+}
+
+.errorCardDetails {
+    font-size: 1rem;
+    color: rgb(95, 99, 104)
+}
+
+.errorDetailLink a {
+    text-decoration: none;
+    color: rgb(26, 115, 232);
+}
+
+.errorCardCode  {
+    font-size: .8rem;
+    margin-top: 12px;
+    color: rgb(95, 99, 104)
+}
+
+.errorCardBtn {
+    border: none;
+    box-sizing: border-box;
+    background-color: rgb(26, 115, 232);
+    font-family: 'Roboto-Regular',Helvetica;
+    font-size: .933rem;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-top: 130px;
+}
+
+.errorCardBtn a {
+    text-decoration: none;
+    color: #FFFFFF;
+}

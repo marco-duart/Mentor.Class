@@ -302,7 +302,7 @@ input {
 }
 .hideArrow {
     color: #FFFFFF;
-    cursor: none;
+    cursor: default;
 }
 
 .theadSorting {
