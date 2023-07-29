@@ -36,6 +36,9 @@ form.addEventListener('submit', async event => {
     const users = await getUsers()
     users.forEach(element => {
       if (element.email === email.value && element.password === password.value) {
+        let loginResult
+        password.className='valid'
+        email.className='valid'
         if(checkbox.checked)
         {
           localStorage.setItem('checked', 'true')
@@ -46,14 +49,18 @@ form.addEventListener('submit', async event => {
         }
         localStorage.setItem('user', `${element.name}`)
         localStorage.setItem('email', `${element.email}`)
+        loginResult = true
         window.location = 'html/home__mentor.html'
+      } else {
+        loginResult = false
       }
     })
-    console.log(emailError.className)
-    emailError.innerText = '*Os dados informados estão incorretos!'
-    passError.innerText = '*Os dados informados estão incorretos!'
-    emailError.className = 'show'
-    passError.className = 'show'
+    if(loginResult === false) {
+      emailError.innerText = '*Os dados informados estão incorretos!'
+      passError.innerText = '*Os dados informados estão incorretos!'
+      emailError.className = 'show'
+      passError.className = 'show'
+    }
   } else {
     if (email.value === '') {
       email.className='invalid'
